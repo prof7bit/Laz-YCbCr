@@ -104,7 +104,7 @@ begin                                  //  example values for BT601
   K^[7] := 2 * (Kg + Kb);              //  1.402
   K^[8] := -Kr * 2 * (Kg + Kb) / Kg;   // -0.7141
   K^[9] := -Kb * 2 * (Kr + Kg) / Kg;   // -0.3441
-  k^[10] := 2 * (Kr + Kg);             //  1.772
+  K^[10] := 2 * (Kr + Kg);             //  1.772
 end;
 
 initialization
