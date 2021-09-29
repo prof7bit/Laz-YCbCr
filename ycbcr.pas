@@ -87,13 +87,13 @@ begin
   Result := RGBToColor(R, G, B);
 end;
 
-procedure InitYCbCrCoef(ItiRec: TItuRec; Kr, Kg: Double);
+procedure InitYCbCrCoeff(ItuRec: TItuRec; Kr, Kg: Double);
 var
   Kb: Double;
   K: ^TYCbCrCoeff;
 begin                                  //  example values for BT601
   Kb := 1 - Kr - Kg;
-  K := @YCbCrCoeffs[ItiRec];
+  K := @YCbCrCoeffs[ItuRec];
   K^[0] := Kr;                         //  0.299
   K^[1] := Kg;                         //  0.587
   K^[2] := Kb;                         //  0.114
@@ -108,7 +108,7 @@ begin                                  //  example values for BT601
 end;
 
 initialization
-  InitYCbCrCoef(ituBT601, 0.299, 0.587);
-  InitYCbCrCoef(ituBT709, 0.2126, 0.7152);
-  InitYCbCrCoef(ituBT2020, 0.2627, 0.6780);
+  InitYCbCrCoeff(ituBT601, 0.299, 0.587);
+  InitYCbCrCoeff(ituBT709, 0.2126, 0.7152);
+  InitYCbCrCoeff(ituBT2020, 0.2627, 0.6780);
 end.
